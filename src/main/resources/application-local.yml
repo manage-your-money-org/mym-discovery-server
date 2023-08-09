@@ -1,0 +1,23 @@
+server:
+  port: 8845
+
+spring:
+  application:
+    name: mym-discovery-server
+  security:
+    user:
+      name: 'rkumar0206'
+      password: '123456789P'
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+
+
+
+
+
+
