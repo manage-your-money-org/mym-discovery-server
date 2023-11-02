@@ -16,8 +16,13 @@ eureka:
   server:
     enableSelfPreservation: false
 
-
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+      base-path: "/mym/${spring.application.name}/actuator"
 
 
 

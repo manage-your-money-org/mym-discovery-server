@@ -17,7 +17,11 @@ public class SecurityConfig {
 
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> {
+                            auth.requestMatchers("/mym/mym-discovery-server/actuator/**").permitAll();
+                            auth.anyRequest().authenticated();
+                        }
+                )
                 .httpBasic(Customizer.withDefaults()).build();
     }
 
